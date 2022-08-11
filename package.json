@@ -8,8 +8,16 @@
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas065/Nucampsite.git"
+  },
   "author": "Thomas Bell",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomas065/Nucampsite/issues"
+  },
+  "homepage": "https://github.com/thomas065/Nucampsite#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
   },
