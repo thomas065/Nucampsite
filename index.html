@@ -79,11 +79,13 @@
                                     </div>
                                     <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-success active">
-                                            <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked value="tent">
+                                            <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked
+                                                value="tent">
                                             Tent
                                         </label>
                                         <label class="btn btn-primary">
-                                            <input type="radio" name="siteType" id="siteRV" autocomplete="off" value="RV"> RV
+                                            <input type="radio" name="siteType" id="siteRV" autocomplete="off"
+                                                value="RV"> RV
                                         </label>
                                     </div>
                                 </div>
@@ -214,6 +216,10 @@
                             <span class="carousel-control-next-icon"></span>
                             <span class="sr-only">Next</span>
                         </a>
+                        <!-- Play Button -->
+                        <button class="btn btn-sm btn-danger" id="carouselButton">
+                            <i class="fa fa-pause"></i>
+                        </button>
                     </div>
 
                 </div>
@@ -315,6 +321,28 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- JQuery -->
+        <script>
+            $(function () {
+                $(".carousel").carousel({
+                    interval: 2000
+                });
+                $("#carouselButton").click(function () {
+                    if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                        $(".carousel").carousel("pause");
+                        $("#carouselButton").children("i").removeClass("fa-pause");
+                        $("#carouselButton").children("i").addClass("fa-play");
+                    } else {
+                        $(".carousel").carousel("cycle");
+                        $("#carouselButton").children("i").removeClass("fa-play");
+                        $("#carouselButton").children("i").addClass("fa-pause");
+                    }
+                });
+            });
+        </script>
+
+
     </body>
 
 </html>
